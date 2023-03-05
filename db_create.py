@@ -25,7 +25,12 @@ def create_BD(vakuum_on_AV_reduce, UA_on_AV_increase, water_on_AV, vakuum_on_NV_
                       f' "water_on_AV", "vakuum_on_NV_reduce", "UA_on_NV_increase", "water_on_NV", "UA_on_TO", "UA_APP", ' \
                       f'"UW_OA_on_RB", "UA_on_AV_RB", rezult) ' \
                       f'VALUES ' \
-                      f"(current_timestamp, current_timestamp - current_date, {vakuum_on_AV_reduce}, {UA_on_AV_increase}, {water_on_AV}, {vakuum_on_NV_reduce}, {UA_on_NV_increase}, {water_on_NV}, {UA_on_TO}, {UA_APP}, {UW_OA_on_RB}, {UA_on_AV_RB}, '{rezult}')"
+                      f"(current_timestamp, current_timestamp - current_date, {vakuum_on_AV_reduce}, " \
+                      f"{UA_on_AV_increase}, {water_on_AV}, {vakuum_on_NV_reduce}, {UA_on_NV_increase}, " \
+                      f"{water_on_NV}, {UA_on_TO}, {UA_APP}, {UW_OA_on_RB}, {UA_on_AV_RB}, '{rezult}')"
+
+    # TO DO:
+    # Сделать нормальное время интервалов в таблице
 
     cursor.execute(insert_create)
     connect.commit()
